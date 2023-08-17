@@ -32,7 +32,6 @@ exports.callChatGpt = async (text) => {
                 },
                 { role: "user", content: text },
                 { role: 'system', content: "Chatbot to eradicate drug addiction" }],
-            max_tokens: 300,
             temperature: 0,
             frequency_penalty: 0.5,
             presence_penalty: 0.5,
