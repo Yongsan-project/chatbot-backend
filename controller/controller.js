@@ -8,25 +8,25 @@ const chatbotInfo = [
 
 ]
 
-const addingPrompt = [...chatbotInfo];
+// const addingPrompt = [...chatbotInfo];
 
-const storeUserQuestion = (message) => {
-    addingPrompt.push({ role: 'user', content: message });
-    return addingPrompt;
-}
+// const storeUserQuestion = (message) => {
+//     addingPrompt.push({ role: 'user', content: message });
+//     return addingPrompt;
+// }
 
-const storeGPTResponse = (response) => {
-    addingPrompt.push({ role: 'assistant', content: response });
-    return addingPrompt;
-}
+// const storeGPTResponse = (response) => {
+//     addingPrompt.push({ role: 'assistant', content: response });
+//     return addingPrompt;
+// }
 
 exports.callChatGpt = async (text) => {
-    console.log(...addingPrompt)
+    // console.log(...addingPrompt)
     try {
         const chatCompletion = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
-                ...addingPrompt,
+                ...chatbotInfo,
                 {
                     role: 'assistant', content: "Chatbot to eradicate drug addiction"
                 },
