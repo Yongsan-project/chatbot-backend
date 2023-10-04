@@ -21,12 +21,12 @@ const storeGPTResponse = (response) => {
 }
 
 exports.callChatGpt = async (text) => {
-    // console.log(...addingPrompt)
+    console.log(...addingPrompt)
     try {
         const chatCompletion = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
-                ...addingPrompt,
+                // ...addingPrompt,
                 {
                     role: 'assistant', content: "Chatbot to eradicate drug addiction"
                 },
